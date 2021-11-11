@@ -38,7 +38,7 @@ router.post('/', checkPost ,(req, res) => {
     partNumber
   })
   .then((newDevice) => {
-    return res.json(newDevice.get());
+    return res.json(newDevice.get({include: 'category'}));
   })
   .catch((err) => {
     console.log("Error while device creation : ", err)
